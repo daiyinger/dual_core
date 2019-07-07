@@ -28,7 +28,7 @@
 
 #ifndef __LINUX_DRIVER_H__
 #define __LINUX_DRIVER_H__
-
+#include "vbus_conf.h"
 #include "rt_vbus_user.h"
 
 int driver_load(void __iomem *outr, void __iomem *inr);

@@ -1,6 +1,8 @@
 #ifndef VBUS_CONFIG_H__
 #define VBUS_CONFIG_H__
 
+#define CPU_INDEX 3
+
 #define _RT_VBUS_RING_BASE (0x70000000 - 8 * 1024 * 1024) /* VBUS ring 基地址 */
 #define _RT_VBUS_RING_SZ   (2 * 1024 * 1024)			  /* VBUS ring 大小*/
 

@@ -11,13 +11,14 @@
 #include <vbus_layout.h>
 #include "linux_driver.h"
 
+//#define CPU_INDEX 3
 #define BUFF_SZ	4 * 1024
 
 /* wake up CPU#1, start up RT-Thread */
 static int startup_rtt(unsigned long start_addr)
 {
     extern int vexpress_cpun_start(u32 address, int cpu);
-    vexpress_cpun_start(start_addr, 1);
+    vexpress_cpun_start(start_addr, CPU_INDEX);
     return 0;
 }
 
@@ -95,8 +96,8 @@ static int __init rtloader_init(void)
 	pr_info("address mapping:%08lx -> %08x, size:%08x\n", va, RT_BASE_ADDR, RT_MEM_SIZE);
 
 	if (ret == 0) {
-		/* unplug CPU#1 */
-		ret = cpu_down(1);
+		/* unplug CPU#CPU_INDEX */
+		ret = cpu_down(CPU_INDEX);
 		if (ret && (ret != -EBUSY)) {
 			pr_err("can't release cpu1: %d\n", ret);
 			return -ENOMEM;

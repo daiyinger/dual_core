@@ -42,7 +42,7 @@ void rt_vmm_clear_emuint(unsigned int irqnr)
 void rt_vmm_trigger_emuint(unsigned int irqnr)
 {
 	extern void arch_send_ipi(int cpu, int ipi);
-	arch_send_ipi(1, irqnr);
+	arch_send_ipi(CPU_INDEX, irqnr);
 }
 
 int rt_vmm_get_int_offset(void)

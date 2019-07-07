@@ -39,6 +39,7 @@
 
 #include "linux_driver.h"
 #include "prio_queue.h"
+#include "vbus_conf.h"
 
 static struct rt_vbus_ring *OUT_RING;
 static struct rt_vbus_ring *IN_RING;
