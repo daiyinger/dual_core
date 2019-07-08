@@ -35,6 +35,7 @@
 #include <interrupt.h>
 #include <vbus.h>
 #include <board.h>
+#include "vbus_conf.h"
 
 int rt_vbus_do_init(void)
 {
