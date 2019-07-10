@@ -97,6 +97,8 @@ static int uart_putc(struct rt_serial_device *serial, char c)
 
     while (UART_FR(uart->hw_base) & UARTFR_TXFF);
     UART_DR(uart->hw_base) = c;
+    //while (UART_FR(uart->hw_base) & UARTFR_TXFF);
+    //UART_DR(uart->hw_base) = '|';
 
     return 1;
 }

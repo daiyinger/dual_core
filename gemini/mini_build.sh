@@ -6,23 +6,23 @@ cd ..
 
 
 echo "===================compile boot========================"
-cd boot
-./build.sh
-scons -c
-cd ..
+#cd boot
+#./build.sh
+#scons -c
+#cd ..
 
-cd vexpress
-./build.sh
-scons -c
-cd ..
+#cd vexpress
+#./build.sh
+#scons -c
+#cd ..
 
 cd rtloader
 ./build.sh
 cd ..
 
-cd start_rtt
-./build.sh
-cd ..
+#cd start_rtt
+#./build.sh
+#cd ..
 
 cd unplug
 ./build.sh

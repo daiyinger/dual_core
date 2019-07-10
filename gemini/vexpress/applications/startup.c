@@ -27,10 +27,12 @@ void rtthread_startup(void)
 {
     /* initialzie hardware interrupt */
     rt_hw_interrupt_init();
+    rt_kprintf("|||||||||||||||||\n");
 
     /* initialize board */
     rt_hw_board_init();
 
+    rt_kprintf("=================\n");
     /* show RT-Thread version */
     rt_show_version();
 

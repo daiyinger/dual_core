@@ -91,7 +91,8 @@ static int __init rtloader_init(void)
 
 	/* load rtthread.bin */
 	va = __phys_to_virt(0x6FC00000);
-	ret = loading_file("/root/rtthread.bin", (unsigned long)va, RT_MEM_SIZE);
+	//ret = loading_file("/root/rtthread.bin", (unsigned long)va, RT_MEM_SIZE);
+	ret = loading_file("/root/u-boot.bin", (unsigned long)va, RT_MEM_SIZE);
 
 	pr_info("address mapping:%08lx -> %08x, size:%08x\n", va, RT_BASE_ADDR, RT_MEM_SIZE);
 
@@ -105,6 +106,7 @@ static int __init rtloader_init(void)
 
 		/* start up rtthread */
 		ret = startup_rtt(0x6FB00000);
+		//ret = startup_rtt(0x6FC00000);
 
 		/* load vbus driver */
 		pr_info("start loading the vbus driver\n");
